@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#
+# Push the current branch to remote and build a jenkins job
+#
+
+branch=$(git rev-parse --symbolic --abbrev-ref $1)
+
+# Set your name
+owner=YOUR_NAME
+
+# Push to your remote fork repository
+git push origin ${branch}
+
+# Build job
+url=JENKINS_JOB_URL
+q="?token=xxx&BRANCH=${branch}&REPOGITORY_OWNER=${owner}"
+
+curl ${url}${q}

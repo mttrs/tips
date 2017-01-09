@@ -1,0 +1,17 @@
+#!/usr/local/bin/zsh
+
+# This is for zsh and ruby(rbnev) user
+source ~/.zshrc
+
+bundle exec ruby -e '
+begin
+  require "pre-commit"
+  true
+rescue LoadError => e
+  $stderr.puts <<-MESSAGE
+pre-commit: WARNING: Skipping checks because: #{e}
+pre-commit: Did you set your Ruby version?
+MESSAGE
+    false
+  end and PreCommit.run
+'

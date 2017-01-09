@@ -1,0 +1,70 @@
+# Mac OS X 10.7.4(Lion)
+# Disable start up sound
+
+#########################################
+#
+# Create script files for muting
+#
+#########################################
+
+$ sudo vim /Library/Scripts/mute-on.sh
+
+# Enter this as content.
+#!/bin/bash
+osascript -e 'set volume with output muted'
+
+$ sudo nano /Library/Scripts/mute-off.sh
+
+# Enter this as content.
+#!/bin/bash
+osascript -e 'set volume without output muted'
+
+#########################################
+#
+# Make both files executable.
+#
+#########################################
+
+$ sudo chmod u+x /Library/Scripts/mute-on.sh
+$ sudo chmod u+x /Library/Scripts/mute-off.sh
+
+# Set volume if you want to control.
+osascript -e 'set volume output volume 20'
+
+#########################################
+#
+# Check if any hooks already exist.
+#
+#########################################
+
+$ sudo defaults read com.apple.loginwindow LoginHook
+$ sudo defaults read com.apple.loginwindow LogoutHook
+
+# Expected resut
+The domain/default pair of (com.apple.loginwindow, LoginHook) does not exist
+
+The domain/default pair of (com.apple.loginwindow, LogoutHook) does not exist
+
+
+#########################################
+#
+# Add hooks for muting.
+#
+#########################################
+
+$ sudo defaults write com.apple.loginwindow LogoutHook /Library/Scripts/mute-on.sh
+$ sudo defaults write com.apple.loginwindow LoginHook /Library/Scripts/mute-off.sh
+
+#########################################
+#
+# Revert
+#
+#########################################
+
+# Delete hooks for muting
+$ sudo defaults delete com.apple.loginwindow LoginHook
+$ sudo defaults delete com.apple.loginwindow LogoutHook
+
+# Delete both script files
+$ sudo rm /Library/Scripts/mute-on.sh
+$ sudo rm /Library/Scripts/mute-off.sh
