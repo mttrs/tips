@@ -134,7 +134,7 @@ $ curl -v --user mttrs:cool http://localhost:8080
 > Accept: */*
 ```
 
-- **-X, --request <command>** and **-d, --data <data>**: Request type & Sending data
+- **-X, --request <command>** and **-d, --data, --data-urlencode <data>**: Request type & Sending data
 ```shell
 $ curl -v -X POST -d 'fish=chips' http://localhost
 * About to connect() to localhost port 80 (#0)
@@ -147,6 +147,12 @@ $ curl -v -X POST -d 'fish=chips' http://localhost
 > Accept: */*
 > Content-Length: 10
 > Content-Type: application/x-www-form-urlencoded
+
+# Send a file
+$ cat << EOF > req.json
+"{\"fish\":\"chips\"}"
+EOF
+$ curl -v -X POST -d @req.json -H "Content-Tyep: application/json" http://localhost
 ```
 
 - **JSON Pretty Print**
