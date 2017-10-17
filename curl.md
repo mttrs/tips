@@ -200,3 +200,57 @@ curl check for outgoing request
 # Please change the TEST URL to Google GeoCoder API and Google Timezone API that you want to test.
 ~ $ curl -w "@/tmp/curl-check" -o /dev/null -s "TEST URL"
 ```
+
+- See keep-alive connection
+```
+% curl -v localhost:8080 localhost:8080 localhost:8080
+* Rebuilt URL to: localhost:8080/
+*   Trying ::1...
+* TCP_NODELAY set
+* Connected to localhost (::1) port 8080 (#0)
+> GET / HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/7.54.0
+> Accept: */*
+>
+< HTTP/1.1 200 OK
+< Date: Tue, 17 Oct 2017 05:27:12 GMT
+< Content-Length: 4
+< Content-Type: text/plain; charset=utf-8
+<
+kk!
+* Connection #0 to host localhost left intact
+* Rebuilt URL to: localhost:8080/
+* Found bundle for host localhost: 0x7fd08d50bb80 [can pipeline]
+* Re-using existing connection! (#0) with host localhost
+* Connected to localhost (::1) port 8080 (#0)
+> GET / HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/7.54.0
+> Accept: */*
+>
+< HTTP/1.1 200 OK
+< Date: Tue, 17 Oct 2017 05:27:12 GMT
+< Content-Length: 4
+< Content-Type: text/plain; charset=utf-8
+<
+kk!
+* Connection #0 to host localhost left intact
+* Rebuilt URL to: localhost:8080/
+* Found bundle for host localhost: 0x7fd08d50bb80 [can pipeline]
+* Re-using existing connection! (#0) with host localhost
+* Connected to localhost (::1) port 8080 (#0)
+> GET / HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/7.54.0
+> Accept: */*
+>
+< HTTP/1.1 200 OK
+< Date: Tue, 17 Oct 2017 05:27:12 GMT
+< Content-Length: 4
+< Content-Type: text/plain; charset=utf-8
+<
+kk!
+* Connection #0 to host localhost left intact
+
+```
