@@ -7,18 +7,18 @@
 ```
 ### Query Per Minutes: QPM
 ```bash
-$ egrep -o '2014-01-01T[0-9]{2}:[0-9]{2}' access.log | sort | uniq -c
+$ grep -Eo '2014-01-01T[0-9]{2}:[0-9]{2}' access.log | sort | uniq -c
 ```
 >  3 2014-01-01T00:00
 
 ### QPM TOP 10
 ```bash
-$ egrep -o '2014-01-01T[0-9]{2}:[0-9]{2}' access.log | sort | uniq -c | sort | head
+$ grep -Eo '2014-01-01T[0-9]{2}:[0-9]{2}' access.log | sort | uniq -c | sort | head
 ```
 
 ### Query Per Seconds: QPS
 ```bash
-$ egrep -o '2014-01-01T[0-9]{2}:[0-9]{2}:[0-9]{2}' access.log | sort | uniq -c
+$ grep -Eo '2014-01-01T[0-9]{2}:[0-9]{2}:[0-9]{2}' access.log | sort | uniq -c
 ```
 > 1 2014-01-01T00:00:00
 
@@ -28,6 +28,6 @@ $ egrep -o '2014-01-01T[0-9]{2}:[0-9]{2}:[0-9]{2}' access.log | sort | uniq -c
 
 ### QPS TOP 10
 ```bash
-$ egrep -o '2014-01-01T[0-9]{2}:[0-9]{2}' access.log | sort | uniq -c | sort -n | head
+$ grep -Eo '2014-01-01T[0-9]{2}:[0-9]{2}' access.log | sort | uniq -c | sort -n | head
 ```
 
