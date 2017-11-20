@@ -183,22 +183,22 @@ Use [**jq**](https://stedolan.github.io/jq/)
 }
 ```
 
-curl check for outgoing request
+- Outgoing request check with breaking down
 ```
 ~ $ cat << EOF > /tmp/curl-check
-> time_namelookup:  %{time_namelookup}\n
-> time_connect:  %{time_connect}\n
-> time_appconnect:  %{time_appconnect}\n
-> time_pretransfer:  %{time_pretransfer}\n
-> time_redirect:  %{time_redirect}\n
+> time_namelookup:     %{time_namelookup}\n
+> time_connect:        %{time_connect}\n
+> time_appconnect:     %{time_appconnect}\n
+> time_pretransfer:    %{time_pretransfer}\n
+> time_redirect:       %{time_redirect}\n
 > time_starttransfer:  %{time_starttransfer}\n
 > ------------------------------------------\n
 > time_total:  %{time_total}\n
 > EOF
 
 
-# Please change the TEST URL to Google GeoCoder API and Google Timezone API that you want to test.
-~ $ curl -w "@/tmp/curl-check" -o /dev/null -s "TEST URL"
+# Please change the TEST_URL
+~ $ curl -w "@/tmp/curl-check" -o /dev/null -s "TEST_URL"
 ```
 
 - See keep-alive connection
