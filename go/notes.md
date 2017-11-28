@@ -1,0 +1,4 @@
+- [Resources for new Go programmers](https://dave.cheney.net/resources-for-new-go-programmers)
+- [Simple, Poetic, Pithy](https://go-proverbs.github.io/)
+- [Standard Package Layout](https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1)
+- [Go database/sql tutorial](http://go-database-sql.org/index.html)
