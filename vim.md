@@ -104,3 +104,27 @@ CTRL-T or CTRL-O	Jump back
 ```
 :%s/\s\+$//
 ```
+
+# [Resize splits more quickly](http://vim.wikia.com/wiki/Resize_splits_more_quickly)
+
+Change the height of the window
+```
+:resize 100
+
+:res 100
+
+:res +10
+```
+
+Change the width of the current window
+```
+:vertical resize 100
+```
+
+For a split window: You can use Ctrl-w + and Ctrl-w - to resize the height of the current window by a single row. For a vsplit window: You can use Ctrl-w > and Ctrl-w < to resize the width of the current window by a single column. Additionally, these key combinations accept a count prefix so that you can change the window size in larger steps. [e.g. Ctrl-w 10 + increases the window size by 10 lines]
+
+To resize all windows to equal dimensions based on their splits, you can use Ctrl-w =.
+
+To increase a window to its maximum height, use Ctrl-w _.
+
+To increase a window to its maximum width, use Ctrl-w |.
