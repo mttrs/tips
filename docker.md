@@ -28,7 +28,7 @@ $ docker stop xxx
 $ docker start CONTAINER
 ```
 
-# Attach local standard input, output, and error streams to a running container
+# Attach local stdin, stdout, and stderr streams to a running container
 ```
 $ docker attach CONTAINER
 ```
