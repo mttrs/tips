@@ -33,6 +33,11 @@ $ docker start CONTAINER
 $ docker attach CONTAINER
 ```
 
+# Run a command in a running container
+```
+$ docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+```
+
 # Delete all containers
 `$ docker rm -f $(docker ps -a -q)`
 
