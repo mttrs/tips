@@ -23,6 +23,16 @@ xxx
 $ docker stop xxx
 ```
 
+# Start stopped continers
+```
+$ docker start CONTAINER
+```
+
+# Attach local standard input, output, and error streams to a running container
+```
+$ docker attach CONTAINER
+```
+
 # Delete all containers
 `$ docker rm -f $(docker ps -a -q)`
 
