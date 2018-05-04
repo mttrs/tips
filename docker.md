@@ -1,11 +1,11 @@
-# Build an imange from Dockerfile and run
+## Build an imange from Dockerfile and run
 ```
 $ cd app
 $ docker build -t mttrs/app .
 $ docker run --rm -it -p 8080:8080 mttrs/app
 ```
 
-# [Logs](https://docs.docker.com/engine/reference/commandline/logs/)
+## [Logs](https://docs.docker.com/engine/reference/commandline/logs/)
 ```
 $ docker logs [OPTIONS] CONTAINER
 
@@ -13,7 +13,7 @@ $ docker logs [OPTIONS] CONTAINER
 $ docker logs xxx -ft
 ```
 
-# Stop container
+## Stop container
 ```
 # List running containers: https://docs.docker.com/engine/reference/commandline/ps/
 $ docker ps -q
@@ -23,29 +23,34 @@ xxx
 $ docker stop xxx
 ```
 
-# Start stopped continers
+## Start stopped continers
 ```
 $ docker start CONTAINER
 ```
 
-# Attach local stdin, stdout, and stderr streams to a running container
+## Attach local stdin, stdout, and stderr streams to a running container
 ```
 $ docker attach CONTAINER
 ```
 
-# Run a command in a running container
+## Run a command in a running container
 ```
 $ docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
 ```
 
-# Delete all containers
+## Remove unused images
+```
+docker image prune [OPTIONS]
+```
+
+## Delete all containers
 `$ docker rm -f $(docker ps -a -q)`
 
-# Delete all images
+## Delete all images
 `$ docker rmi -f $(docker images -q)`
 
 
-# [Install shell completion](https://docs.docker.com/docker-for-mac/#install-shell-completion)
+## [Install shell completion](https://docs.docker.com/docker-for-mac/#install-shell-completion)
 Zsh  
 In Zsh, the completion system takes care of things. To activate completion for Docker commands, these files need to be copied or symlinked to your Zsh site-functions/ directory. For example, if you installed Zsh via Homebrew:
 ```
