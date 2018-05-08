@@ -1,4 +1,5 @@
-**$ :| openssl s_client -connect host:port -servername host**
+## Verify that your application is serving your certificate by running
+`$ :| openssl s_client -connect host:port -servername host`
 (ssl/tls version is optional. e.g. -tls1_1)
 
 all options
