@@ -44,10 +44,21 @@ docker image prune [OPTIONS]
 ```
 
 ## Delete all containers
-`$ docker rm -f $(docker ps -a -q)`
+```
+$ docker rm -f $(docker ps -a -q)
+```
 
 ## Delete all images
-`$ docker rmi -f $(docker images -q)`
+```
+$ docker rmi -f $(docker images -q)
+```
+
+## Delete old docker-compose image
+```
+$ docker-compose rm
+```
+When you use this command? "No such image" error happens when `docker-compose up`.  
+Ref: https://stackoverflow.com/questions/37454548/docker-compose-no-such-image  
 
 
 ## [Install shell completion](https://docs.docker.com/docker-for-mac/#install-shell-completion)
