@@ -105,6 +105,15 @@ CTRL-T or CTRL-O	Jump back
 :%s/\s\+$//
 ```
 
+# Copy a word and paste it in search
+```
+# Copy
+y
+
+#
+/ ctrl r + Shift "
+```
+
 # [Resize splits more quickly](http://vim.wikia.com/wiki/Resize_splits_more_quickly)
 
 Change the height of the window
