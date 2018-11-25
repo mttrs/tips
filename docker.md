@@ -73,3 +73,17 @@ $ ln -s $etc/docker.zsh-completion /usr/local/share/zsh/site-functions/_docker
 $ ln -s $etc/docker-machine.zsh-completion /usr/local/share/zsh/site-functions/_docker-machine
 $ ln -s $etc/docker-compose.zsh-completion /usr/local/share/zsh/site-functions/_docker-compose
 ```
+
+## PostgreSQL
+- Run a postgres container
+```
+$ docker run --name my-pg -p 5432:5432 -e POSTGRES_USER=mttrs -e POSTGRES_PASSWORD=xxx -d postgres:latest
+```
+- Connect to the postgres container
+```
+# With docker command
+$ docker exec -it my-pg psql -U mttrs
+
+# With psql command
+$ psql -h localhost -U mttrs
+```
