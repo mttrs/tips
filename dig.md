@@ -121,3 +121,11 @@ heroku.com.		86400	IN	NS	ns3.p19.dynect.net.
 heroku.com.		86400	IN	NS	ns4.p19.dynect.net.
 ;; Received 296 bytes from 205.251.196.229#53(205.251.196.229) in 35 ms
 ```
+
+dig can connect to whatever resolver you want to via @. when I see discrepancies I frequently run three dig commands:
+
+```
+dig domain @1.1.1.1 # Cloudflare
+dig domain @8.8.8.8 # Google Public DNS
+dig domain @208.67.220.220 # Cisco/OpenDNS
+```
