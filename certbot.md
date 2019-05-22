@@ -1,7 +1,10 @@
 # Certbot
 https://certbot.eff.org/docs/using.html#manual
-# certbot certonly --help
-# certbot certonly --manual -d DOMAIN
+
+```
+certbot certonly --help
+certbot certonly --manual -d DOMAIN
+```
 
 ## Provide laborious manual instructions for obtaining a certificate
 ```
