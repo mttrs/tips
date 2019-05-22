@@ -122,7 +122,7 @@ heroku.com.		86400	IN	NS	ns4.p19.dynect.net.
 ;; Received 296 bytes from 205.251.196.229#53(205.251.196.229) in 35 ms
 ```
 
-dig can connect to whatever resolver you want to via @. when I see discrepancies I frequently run three dig commands:
+dig can connect to whatever resolver you want to via @. When there are any discrepancies, adding resolver would help.
 
 ```
 dig domain @1.1.1.1 # Cloudflare
